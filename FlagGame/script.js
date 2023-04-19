@@ -10,6 +10,8 @@ let countries = [];
 const flagImg = document.querySelector("#flag-img");
 const answerInput = document.querySelector("#answer-input");
 const submitBtn = document.querySelector("#submit-btn");
+const newGame = document.querySelector("#new-game-btn");
+const gameContainer = document.querySelector("#game-container");
 const scoreDisplay = document.querySelector("#score-display");
 const resultDisplay = document.querySelector("#result-display");
 
@@ -27,6 +29,9 @@ fetch(apiEndpoint)
 
 // Game initialization function
 function initializeGame() {
+  newGame.classList.add("disable-btn");
+
+  gameContainer.classList.remove("disable-btn");
   // Make a copy of the countries array
   countries = [...countries];
 
@@ -58,12 +63,19 @@ function showNextFlag() {
 }
 
 // Function to handle answer submission
+let total = 0;
 async function handleAnswerSubmission(e) {
   e.preventDefault();
 
   // Get the user's answer
   const userAnswer = answerInput.value.trim();
-
+  console.log(total);
+  total++;
+  if (total === 5) {
+    total = 0;
+    gameContainer.classList.add("disable-btn");
+    totalScore();
+  }
   // Check if the user has entered an answer
   if (userAnswer === "") {
     resultDisplay.textContent = "Please enter an answer.";
@@ -83,6 +95,7 @@ async function handleAnswerSubmission(e) {
 
   // console.log(actualCountry);
   // Check if the answer is correct
+
   if (actualCountry === userAnswer) {
     resultDisplay.textContent = "Correct!";
     score++;
@@ -102,3 +115,10 @@ async function handleAnswerSubmission(e) {
 function updateScoreDisplay() {
   scoreDisplay.textContent = `Score: ${score}`;
 }
+
+function totalScore() {
+  resultDisplay.textContent = "";
+  scoreDisplay.textContent = `Toal Score: ${score}`;
+  newGame.classList.remove("disable-btn");
+}
+newGame.addEventListener("click", initializeGame);

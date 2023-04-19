@@ -52,6 +52,16 @@ label {
   border-radius: 5px;
   cursor: pointer;
 }
+#new-game-btn {
+  margin: 8px 0 0 0;
+  padding: 20px 10px;
+  font-size: 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
 #submit-btn:hover {
   background-color: #3e8e41;
@@ -65,4 +75,7 @@ label {
 #score-display {
   font-size: 24px;
   margin-top: 20px;
+}
+.disable-btn {
+  display: none;
 }
