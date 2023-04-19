@@ -60,9 +60,10 @@ function CountryInfoModal(country) {
   country = country[0];
   let html = `
         <h2 class = "recipe-title">${country.name.common}</h2>
-        <p class = "recipe-category">${country.area}</p>
+        Area => <p class = "recipe-category">${country.area}</p>
+         Population =>   <p  class = "recipe-category"  Population>${country.population}</p>
         <div class = "recipe-instruct">
-            <h3>Instructions:</h3>
+            <h3>Flag</h3>
             <img src="${country.flags.png}" />
         </div>
         <a href=${country.maps.googleMaps}>Map</a>
