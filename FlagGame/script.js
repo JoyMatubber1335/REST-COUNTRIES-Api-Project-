@@ -1,5 +1,5 @@
 // API endpoint
-const apiEndpoint = "https://restcountries.com/v2/all";
+const api = "https://restcountries.com/v2/all";
 
 // Game state variables
 let score = 0;
@@ -16,7 +16,7 @@ const scoreDisplay = document.querySelector("#score-display");
 const resultDisplay = document.querySelector("#result-display");
 const logoutBtn = document.querySelector("#logout-btn");
 // Get country data from API
-fetch(apiEndpoint)
+fetch(api)
   .then((response) => response.json())
   .then((data) => {
     countries = data;
@@ -53,12 +53,12 @@ function showNextFlag() {
   const randomIndex = Math.floor(Math.random() * countries.length);
   const randomCountry = countries[randomIndex];
 
-  // Set current flag to the country's flag
+  // Set current flag to the countrys flag
   currentFlag = randomCountry.flag;
   flagImg.src = currentFlag;
   console.log(randomCountry.name);
 
-  // Remove the country from the array
+  // in a row not show
   countries.splice(randomIndex, 1);
 }
 
@@ -67,7 +67,7 @@ let total = 0;
 async function handleAnswerSubmission(e) {
   e.preventDefault();
 
-  // Get the user's answer
+  // Get the users answer
   const userAnswer = answerInput.value.trim();
   console.log(total);
   total++;

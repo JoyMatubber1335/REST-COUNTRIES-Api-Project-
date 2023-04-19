@@ -30,7 +30,7 @@ fetch("https://restcountries.com/v3.1/all")
     });
   });
 
-// when a country is selected, fetch the current time for that country and display it on the screen
+// when a country is selected fetch the current time for that country and display it
 countrySelect.addEventListener("change", () => {
   const selectedCountry = countrySelect.value;
   console.log(selectedCountry);
@@ -38,15 +38,15 @@ countrySelect.addEventListener("change", () => {
     .then((response) => response.json())
     .then((data) => {
       const selectedCountryData = data[0];
-      const timeZonForSelectedCountry = selectedCountryData.timezones[0];
+      const timeZonForSelectedCountry = selectedCountryData.timezones[0]; //utc+5:00
       console.log(timeZonForSelectedCountry);
 
-      const currentTime = new Date();
-      const localTime = currentTime.getTime();
+      const currentTime = new Date(); // curent time
+      const localTime = currentTime.getTime(); // ms local time
       console.log(currentTime);
       console.log(localTime);
 
-      const localOffset = currentTime.getTimezoneOffset() * 60000;
+      const localOffset = currentTime.getTimezoneOffset() * 60000; // ms i uts time
       const utc = localTime + localOffset;
 
       const offsetStr = timeZonForSelectedCountry;
