@@ -16,21 +16,22 @@ const labelDate = document.querySelector(".date");
 const labelBalance = document.querySelector(".balance__value");
 
 const containerApp = document.querySelector(".app");
+const containerHome = document.querySelector(".home");
 //const containerMovements = document.querySelector(".movements");
 
 const btnLogin = document.querySelector(".login__btn");
 const btnDetails = document.querySelector(".form__btn--details");
 const btnGame = document.querySelector(".form__btn--game");
 const btnTime = document.querySelector(".form__btn--time");
-// const btnSort = document.querySelector(".btn--sort");
+const btnLogout = document.querySelector(".btn--logout");
 
 const inputLoginUsername = document.querySelector(".login__input--user");
 const inputLoginPin = document.querySelector(".login__input--pin");
-const inputTransferTo = document.querySelector(".form__input--to");
-const inputTransferAmount = document.querySelector(".form__input--amount");
-const inputLoanAmount = document.querySelector(".form__input--loan-amount");
-const inputCloseUsername = document.querySelector(".form__input--user");
-const inputClosePin = document.querySelector(".form__input--pin");
+// const inputTransferTo = document.querySelector(".form__input--to");
+// const inputTransferAmount = document.querySelector(".form__input--amount");
+// const inputLoanAmount = document.querySelector(".form__input--loan-amount");
+// const inputCloseUsername = document.querySelector(".form__input--user");
+// const inputClosePin = document.querySelector(".form__input--pin");
 
 ///containerMovements.innerHTML = "";
 let currentAccount, timer;
@@ -64,7 +65,9 @@ btnLogin.addEventListener("click", function (e) {
     labelWelcome.textContent = `Wlcome Back ${
       currentAccount.owner.split(" ")[0]
     }`;
+    // window.location.href = "../Details/homePage.js";
     containerApp.style.opacity = 100;
+    // containerHome.style.opacity = 0;
     inputLoginUsername.value = inputLoginPin.value = "";
     // inputClosePin.blur();
     // timer
@@ -86,25 +89,6 @@ btnDetails.addEventListener("click", function (e) {
   window.location.href = "../Details/index.html";
 });
 
-// ddelete account
-
-// btnClose.addEventListener("click", function (e) {
-//   e.preventDefault();
-//   if (
-//     inputCloseUsername.value === currentAccount.userName &&
-//     +inputClosePin.value === currentAccount.pin
-//   ) {
-//     const index = accounts.findIndex(
-//       // kon account delet korbo khuje ber korbe
-//       (acc) => acc.userName === currentAccount.userName
-//     );
-//     console.log(index);
-//     accounts.splice(index, 1); // delete one time
-//     containerApp.style.opacity = 0; //account delete kore dile information show korbe na
-//   }
-//   inputCloseUsername.value = inputClosePin.value = ""; // set this positin is emplty
-//   // console.log('delete');
-// });
 btnGame.addEventListener("click", function (e) {
   e.preventDefault();
 
@@ -115,4 +99,10 @@ btnTime.addEventListener("click", function (e) {
   e.preventDefault();
 
   window.location.href = "../TimeZone/index.html";
+});
+
+btnLogout.addEventListener("click", function (e) {
+  e.preventDefault();
+
+  window.location.href = "../Login/index.html";
 });

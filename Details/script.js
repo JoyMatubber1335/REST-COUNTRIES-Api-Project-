@@ -2,7 +2,7 @@ const searchBtn = document.getElementById("search-btn");
 const countryList = document.getElementById("meal");
 const countryDetailsContent = document.querySelector(".meal-details-content");
 const CloseBtn = document.getElementById("recipe-close-btn");
-
+const logoutBtn = document.querySelector("#logout-btn");
 // event listeners
 searchBtn.addEventListener("click", getcountryList);
 countryList.addEventListener("click", getCountryInfo);
@@ -79,3 +79,9 @@ function CountryInfoModal(country) {
 // <div class = "recipe-link">
 //     <a href = "${meal.strYoutube}" target = "_blank">Watch Video</a>
 // </div>
+logoutBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  // containerApp.style.opacity = 100;
+  //inputLoginUsername.value = inputLoginPin.value = "";
+  window.location.href = "../Login/index.html";
+});

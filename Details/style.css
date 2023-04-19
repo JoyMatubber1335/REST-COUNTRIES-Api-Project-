@@ -45,6 +45,17 @@ body {
 .meal-search {
   margin: 2rem 0;
 }
+
+#logout-btn {
+  width: 100px;
+  height: 40px;
+  font-size: 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 .meal-search cite {
   font-size: 1rem;
 }

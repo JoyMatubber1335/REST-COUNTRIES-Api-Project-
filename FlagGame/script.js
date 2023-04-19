@@ -14,7 +14,7 @@ const newGame = document.querySelector("#new-game-btn");
 const gameContainer = document.querySelector("#game-container");
 const scoreDisplay = document.querySelector("#score-display");
 const resultDisplay = document.querySelector("#result-display");
-
+const logoutBtn = document.querySelector("#logout-btn");
 // Get country data from API
 fetch(apiEndpoint)
   .then((response) => response.json())
@@ -122,3 +122,10 @@ function totalScore() {
   newGame.classList.remove("disable-btn");
 }
 newGame.addEventListener("click", initializeGame);
+
+logoutBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  // containerApp.style.opacity = 100;
+  //inputLoginUsername.value = inputLoginPin.value = "";
+  window.location.href = "../Login/index.html";
+});

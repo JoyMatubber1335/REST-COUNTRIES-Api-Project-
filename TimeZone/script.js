@@ -2,7 +2,7 @@ const countrySelect = document.getElementById("country-select");
 const clock = document.getElementById("clock");
 const clockBd = document.getElementById("clockBd");
 const currentTimeBD = document.getElementById("current-time");
-
+const logoutBtn = document.querySelector("#logout-btn");
 // display the current time
 function CurrentTimeBD() {
   const currentTime = new Date();
@@ -76,4 +76,11 @@ countrySelect.addEventListener("change", () => {
       clock.innerHTML = dateString;
     })
     .catch((error) => console.error(error));
+});
+
+logoutBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  // containerApp.style.opacity = 100;
+  //inputLoginUsername.value = inputLoginPin.value = "";
+  window.location.href = "../Login/index.html";
 });
