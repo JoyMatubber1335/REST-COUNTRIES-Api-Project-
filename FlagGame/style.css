@@ -1,0 +1,68 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+#flag-img {
+  width: 300px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+#answer-input {
+  width: 300px;
+  height: 40px;
+  font-size: 20px;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+#submit-btn {
+  width: 100px;
+  height: 40px;
+  font-size: 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#submit-btn:hover {
+  background-color: #3e8e41;
+}
+
+#result-display {
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+#score-display {
+  font-size: 24px;
+  margin-top: 20px;
+}
