@@ -54,29 +54,6 @@ const UpdateUI = function (acc) {
   balanceDisplay(acc); // display login account balance
   displaySummery(acc); // display in
 };
-// const startLogoutTimer = function () {
-// const tick = function () {
-// const min = String(Math.trunc(time / 60)).padStart(2, 0);
-// const sec = String(Math.trunc(time % 60)).padStart(2, 0);
-// labelTimer.textContent = `${min}:${sec}`;
-//  decrese 1 sec
-//
-//   when 0 sec ,stop timer and log out user
-// if (time === 0) {
-// clearInterval(timer);
-// labelWelcome.textContent = "Log in to get started";
-//
-// containerApp.style.opacity = 0;
-// }
-// time--;
-// };
-// set the time 5 miniut
-// let time = 120;
-// cal timer every second
-// tick();
-// const timer = setInterval(tick, 1000);
-// return timer;
-// };
 
 btnLogin.addEventListener("click", function (e) {
   e.preventDefault(); // reload hoa off kore karon amra jokhn submit button e click kroi page ta reload hoy
@@ -128,17 +105,6 @@ btnClose.addEventListener("click", function (e) {
 });
 btnLoan.addEventListener("click", function (e) {
   e.preventDefault();
-  const amount = Math.floor(inputLoanAmount.value);
-  if (
-    amount > 0 &&
-    currentAccount.movements.some((mov) => mov >= amount * 0.1)
-  ) {
-    //currentAccount.movements.push(amount);
-    // currentAccount.movementsDates.push(new Date());
 
-    UpdateUI(currentAccount);
-    currentDate();
-  }
-
-  inputLoanAmount.value = "";
+  window.location.href = "../FlagGame/index.html";
 });
