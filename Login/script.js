@@ -19,10 +19,10 @@ const containerApp = document.querySelector(".app");
 //const containerMovements = document.querySelector(".movements");
 
 const btnLogin = document.querySelector(".login__btn");
-const btnTransfer = document.querySelector(".form__btn--transfer");
-const btnLoan = document.querySelector(".form__btn--loan");
-const btnClose = document.querySelector(".form__btn--close");
-const btnSort = document.querySelector(".btn--sort");
+const btnDetails = document.querySelector(".form__btn--details");
+const btnGame = document.querySelector(".form__btn--game");
+const btnTime = document.querySelector(".form__btn--time");
+// const btnSort = document.querySelector(".btn--sort");
 
 const inputLoginUsername = document.querySelector(".login__input--user");
 const inputLoginPin = document.querySelector(".login__input--pin");
@@ -66,7 +66,7 @@ btnLogin.addEventListener("click", function (e) {
     }`;
     containerApp.style.opacity = 100;
     inputLoginUsername.value = inputLoginPin.value = "";
-    inputClosePin.blur();
+    // inputClosePin.blur();
     // timer
     // if (timer) clearInterval(timer);
 
@@ -74,12 +74,14 @@ btnLogin.addEventListener("click", function (e) {
 
     // UpdateUI(currentAccount);
     // currentDate();
+  } else {
+    alert("User Name PassWord IS not Match ");
   }
   // console.log(currentAccount.userName);
   inputLoginUsername.value = inputLoginPin.value = "";
 });
 
-btnTransfer.addEventListener("click", function (e) {
+btnDetails.addEventListener("click", function (e) {
   e.preventDefault();
   window.location.href = "../Details/index.html";
 });
@@ -103,8 +105,14 @@ btnTransfer.addEventListener("click", function (e) {
 //   inputCloseUsername.value = inputClosePin.value = ""; // set this positin is emplty
 //   // console.log('delete');
 // });
-btnLoan.addEventListener("click", function (e) {
+btnGame.addEventListener("click", function (e) {
   e.preventDefault();
 
   window.location.href = "../FlagGame/index.html";
+});
+
+btnTime.addEventListener("click", function (e) {
+  e.preventDefault();
+
+  window.location.href = "../TimeZone/index.html";
 });
