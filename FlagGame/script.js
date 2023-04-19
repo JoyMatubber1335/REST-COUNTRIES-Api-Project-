@@ -81,7 +81,7 @@ async function handleAnswerSubmission(e) {
     resultDisplay.textContent = "Please enter an answer.";
     return;
   }
-
+// Get Country Code
   // Get the actual country name
   // const actualCountry = getCountryName(currentFlag);
   const countryCode = currentFlag.split("/").pop().slice(0, -4);

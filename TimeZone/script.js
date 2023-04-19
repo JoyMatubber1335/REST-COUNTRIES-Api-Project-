@@ -51,14 +51,14 @@ countrySelect.addEventListener("change", () => {
 
       const offsetStr = timeZonForSelectedCountry;
       const offsetFloat = parseFloat(offsetStr.replace("UTC", ""));
-      let selectedCountryTime = utc + 3600000 * offsetFloat;
+      let selectedCountryTime = utc + 3600000 * offsetFloat;  // 5.0 to sec
       console.log(selectedCountryTime);
       console.log(
         `The local time in ${selectedCountry} is ${new Date(
           selectedCountryTime
         ).toLocaleString()}`
       );
-      // const timestamp = selectedCountryTime;
+      // const timestamp = selectedCountryTime;  //
 
       const date = new Date(selectedCountryTime);
       const options = {

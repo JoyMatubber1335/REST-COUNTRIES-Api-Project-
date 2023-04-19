@@ -85,6 +85,7 @@ btnTime.addEventListener("click", function (e) {
 
   window.location.href = "../TimeZone/index.html";
 });
+//logout
 
 btnLogout.addEventListener("click", function (e) {
   e.preventDefault();

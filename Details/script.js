@@ -10,7 +10,7 @@ CloseBtn.addEventListener("click", () => {
   countryDetailsContent.parentElement.classList.remove("showRecipe");
 });
 
-// get meal list that matches with the ingredients
+// get country  list that matches with the value
 function getcountryList() {
   let searchInputTxt = document.getElementById("search-input").value.trim();
   console.log(searchInputTxt);
@@ -73,12 +73,7 @@ function CountryInfoModal(country) {
   countryDetailsContent.innerHTML = html;
   countryDetailsContent.parentElement.classList.add("showRecipe");
 }
-// <div class = "recipe-meal-img">
-//     <img src = "${meal.strMealThumb}" alt = "">
-// </div>
-// <div class = "recipe-link">
-//     <a href = "${meal.strYoutube}" target = "_blank">Watch Video</a>
-// </div>
+
 logoutBtn.addEventListener("click", function (e) {
   e.preventDefault();
   // containerApp.style.opacity = 100;
