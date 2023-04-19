@@ -25,7 +25,6 @@ fetch(apiEndpoint)
     console.error(error);
   });
 
-
 // Game initialization function
 function initializeGame() {
   // Make a copy of the countries array
@@ -103,4 +102,3 @@ async function handleAnswerSubmission(e) {
 function updateScoreDisplay() {
   scoreDisplay.textContent = `Score: ${score}`;
 }
-

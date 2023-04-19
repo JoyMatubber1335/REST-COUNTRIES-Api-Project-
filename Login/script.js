@@ -49,11 +49,11 @@ const createUserName = function (account) {
 // console.log('ok');
 createUserName(accounts);
 
-const UpdateUI = function (acc) {
-  displayMovment(acc); // display Movment
-  balanceDisplay(acc); // display login account balance
-  displaySummery(acc); // display in
-};
+// const UpdateUI = function (acc) {
+// //  displayMovment(acc); // display Movment
+//   //balanceDisplay(acc); // display login account balance
+//   //displaySummery(acc); // display in
+// };
 
 btnLogin.addEventListener("click", function (e) {
   e.preventDefault(); // reload hoa off kore karon amra jokhn submit button e click kroi page ta reload hoy
@@ -72,8 +72,8 @@ btnLogin.addEventListener("click", function (e) {
 
     // timer = startLogoutTimer();
 
-    UpdateUI(currentAccount);
-    currentDate();
+    // UpdateUI(currentAccount);
+    // currentDate();
   }
   // console.log(currentAccount.userName);
   inputLoginUsername.value = inputLoginPin.value = "";
@@ -86,23 +86,23 @@ btnTransfer.addEventListener("click", function (e) {
 
 // ddelete account
 
-btnClose.addEventListener("click", function (e) {
-  e.preventDefault();
-  if (
-    inputCloseUsername.value === currentAccount.userName &&
-    +inputClosePin.value === currentAccount.pin
-  ) {
-    const index = accounts.findIndex(
-      // kon account delet korbo khuje ber korbe
-      (acc) => acc.userName === currentAccount.userName
-    );
-    console.log(index);
-    accounts.splice(index, 1); // delete one time
-    containerApp.style.opacity = 0; //account delete kore dile information show korbe na
-  }
-  inputCloseUsername.value = inputClosePin.value = ""; // set this positin is emplty
-  // console.log('delete');
-});
+// btnClose.addEventListener("click", function (e) {
+//   e.preventDefault();
+//   if (
+//     inputCloseUsername.value === currentAccount.userName &&
+//     +inputClosePin.value === currentAccount.pin
+//   ) {
+//     const index = accounts.findIndex(
+//       // kon account delet korbo khuje ber korbe
+//       (acc) => acc.userName === currentAccount.userName
+//     );
+//     console.log(index);
+//     accounts.splice(index, 1); // delete one time
+//     containerApp.style.opacity = 0; //account delete kore dile information show korbe na
+//   }
+//   inputCloseUsername.value = inputClosePin.value = ""; // set this positin is emplty
+//   // console.log('delete');
+// });
 btnLoan.addEventListener("click", function (e) {
   e.preventDefault();
 
