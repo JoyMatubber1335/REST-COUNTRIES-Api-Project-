@@ -9,14 +9,14 @@ function CurrentTimeBD() {
   const options = {
     hour: "numeric",
     minute: "numeric",
-    second: "numeric",
+    second: "numeric",    
     hour12: true,
   };
   const dateString = currentTime.toLocaleString(undefined, options);
   currentTimeBD.innerHTML = dateString;
 }
 CurrentTimeBD();
-// setInterval(CurrentTimeBD, 1000); // update every second
+setInterval(CurrentTimeBD, 1000); // update every second
 
 // fetch all countries from REST Countries API
 fetch("https://restcountries.com/v3.1/all")
@@ -51,7 +51,7 @@ countrySelect.addEventListener("change", () => {
 
       const offsetStr = timeZonForSelectedCountry;
       const offsetFloat = parseFloat(offsetStr.replace("UTC", ""));
-      let selectedCountryTime = utc + 3600000 * offsetFloat;  // 5.0 to sec
+      let selectedCountryTime = utc + 3600000 * offsetFloat; // 5.0 to sec
       console.log(selectedCountryTime);
       console.log(
         `The local time in ${selectedCountry} is ${new Date(

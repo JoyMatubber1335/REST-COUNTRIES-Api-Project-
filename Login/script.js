@@ -19,7 +19,7 @@ const labelBalance = document.querySelector(".balance__value");
 
 const containerApp = document.querySelector(".app");
 const containerHome = document.querySelector(".home");
-//const containerMovements = document.querySelector(".movements");
+
 
 const btnLogin = document.querySelector(".login__btn");
 const btnDetails = document.querySelector(".form__btn--details");
@@ -30,7 +30,7 @@ const btnLogout = document.querySelector(".btn--logout");
 const inputLoginUsername = document.querySelector(".login__input--user");
 const inputLoginPin = document.querySelector(".login__input--pin");
 
-///containerMovements.innerHTML = "";
+
 let currentAccount, timer;
 
 const createUserName = function (account) {
