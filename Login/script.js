@@ -6,20 +6,18 @@ const account1 = {
 };
 
 const account2 = {
-  owner: "Jonas Schmedtmann",
+  owner: "Joy Sharma",
   pin: 1111,
 };
-
-
 
 const accounts = [account1, account2];
 const labelWelcome = document.querySelector(".welcome");
 const labelDate = document.querySelector(".date");
 const labelBalance = document.querySelector(".balance__value");
 
+const containerImg = document.querySelector(".b-img");
 const containerApp = document.querySelector(".app");
 const containerHome = document.querySelector(".home");
-
 
 const btnLogin = document.querySelector(".login__btn");
 const btnDetails = document.querySelector(".form__btn--details");
@@ -29,7 +27,6 @@ const btnLogout = document.querySelector(".btn--logout");
 
 const inputLoginUsername = document.querySelector(".login__input--user");
 const inputLoginPin = document.querySelector(".login__input--pin");
-
 
 let currentAccount, timer;
 
@@ -47,21 +44,21 @@ const createUserName = function (account) {
 // console.log('ok');
 createUserName(accounts);
 
-
 btnLogin.addEventListener("click", function (e) {
   e.preventDefault(); // reload hoa off kore karon amra jokhn submit button e click kroi page ta reload hoy
   currentAccount = accounts.find(
     (acc) => acc.userName === inputLoginUsername.value
   );
-  if (currentAccount?.pin === +inputLoginPin.value) {   
+  if (currentAccount?.pin === +inputLoginPin.value) {
     labelWelcome.textContent = `Wlcome Back ${
       currentAccount.owner.split(" ")[0]
     }`;
     // window.location.href = "../Details/homePage.js";
-    containerApp.style.opacity = 100;
+    // containerApp.style.opacity = 100;
+    containerApp.classList.remove("disable");
+    containerImg.classList.add("disable");
     // containerHome.style.opacity = 0;
     inputLoginUsername.value = inputLoginPin.value = "";
-    
   } else {
     alert("User Name Password Is not Match !!! Try Again  ");
   }

@@ -56,8 +56,8 @@ function showNextFlag() {
   // Set current flag to the countrys flag
   currentFlag = randomCountry.flag;
   flagImg.src = currentFlag;
-  console.log(randomCountry.name);
-
+  console.log(randomCountry.name);   
+  console.log(flagImg.src);   //https://flagcdn.com/at.svg
   // in a row not show
   countries.splice(randomIndex, 1);
 }
@@ -81,7 +81,7 @@ async function handleAnswerSubmission(e) {
     resultDisplay.textContent = "Please enter an answer.";
     return;
   }
-// Get Country Code
+  // Get Country Code
   // Get the actual country name
   // const actualCountry = getCountryName(currentFlag);
   const countryCode = currentFlag.split("/").pop().slice(0, -4);
