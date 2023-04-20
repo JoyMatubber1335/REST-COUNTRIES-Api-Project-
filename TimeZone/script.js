@@ -3,13 +3,18 @@ const clock = document.getElementById("clock");
 const clockBd = document.getElementById("clockBd");
 const currentTimeBD = document.getElementById("current-time");
 const logoutBtn = document.querySelector("#logout-btn");
+const backBtn = document.querySelector("#logout-btn");
 // display the current time
 function CurrentTimeBD() {
   const currentTime = new Date();
   const options = {
+    weekday: "short",
+    month: "short",
+    day: "numeric",
+    year: "numeric",
     hour: "numeric",
     minute: "numeric",
-    second: "numeric",    
+    second: "numeric",
     hour12: true,
   };
   const dateString = currentTime.toLocaleString(undefined, options);
@@ -74,7 +79,9 @@ countrySelect.addEventListener("change", () => {
       const dateString = date.toLocaleString(undefined, options);
       console.log(dateString);
       clock.innerHTML = dateString;
+      
     })
+    
     .catch((error) => console.error(error));
 });
 
@@ -84,3 +91,10 @@ logoutBtn.addEventListener("click", function (e) {
   //inputLoginUsername.value = inputLoginPin.value = "";
   window.location.href = "../Login/index.html";
 });
+
+// backBtn.addEventListener("click", function (e) {
+//   e.preventDefault();
+//   // containerApp.style.opacity = 100;
+//   //inputLoginUsername.value = inputLoginPin.value = "";
+//   window.location.href = "../Login/index.html";
+// });

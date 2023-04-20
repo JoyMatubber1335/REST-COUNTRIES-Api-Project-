@@ -16,6 +16,7 @@ const labelDate = document.querySelector(".date");
 const labelBalance = document.querySelector(".balance__value");
 
 const containerImg = document.querySelector(".b-img");
+const containerNav = document.querySelector(".nav-bar");
 const containerApp = document.querySelector(".app");
 const containerHome = document.querySelector(".home");
 
@@ -57,6 +58,8 @@ btnLogin.addEventListener("click", function (e) {
     // containerApp.style.opacity = 100;
     containerApp.classList.remove("disable");
     containerImg.classList.add("disable");
+    containerNav.classList.add("disable");
+
     // containerHome.style.opacity = 0;
     inputLoginUsername.value = inputLoginPin.value = "";
   } else {

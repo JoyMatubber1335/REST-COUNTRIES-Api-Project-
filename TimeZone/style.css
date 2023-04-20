@@ -33,7 +33,7 @@ h1 {
   background-color: #f1f1f1;
   text-align: center;
   margin: 0 auto;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 25px rgb(241, 107, 107);
 }
 #clockBd {
   font-size: 20px;
@@ -62,15 +62,32 @@ h1 {
   font-size: 18px;
   font-weight: bold;
   padding: 20px;
-  width: 100px;
-  height: 30px;
-  background-color: #f1f1f1;
-  text-align: right;
+
+  width: 150px;
+  height: 70px;
+  background-color: #cfbaba;
+  text-align: center;
   margin: 0 auto;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 25px rgb(4, 136, 26);
 }
 
 #logout-btn {
+  background-color: #2c3e50;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  border: none;
+}
+
+#back-btn:hover {
+  background-color: #fff;
+  color: #2c3e50;
+  border: 2px solid #2c3e50;
+}
+
+#back-btn {
   background-color: #2c3e50;
   color: #fff;
   padding: 0.5rem 1rem;
