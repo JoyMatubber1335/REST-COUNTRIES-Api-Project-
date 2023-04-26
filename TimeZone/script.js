@@ -1,3 +1,5 @@
+
+
 const countrySelect = document.getElementById("country-select");
 const clock = document.getElementById("clock");
 const clockBd = document.getElementById("clockBd");
@@ -21,7 +23,7 @@ function CurrentTimeBD() {
   currentTimeBD.innerHTML = dateString;
 }
 CurrentTimeBD();
-setInterval(CurrentTimeBD, 1000); // update every second
+setInterval(CurrentTimeBD, 1000);
 
 // fetch all countries from REST Countries API
 fetch("https://restcountries.com/v3.1/all")
@@ -51,12 +53,12 @@ countrySelect.addEventListener("change", () => {
       console.log(currentTime);
       console.log(localTime);
 
-      const localOffset = currentTime.getTimezoneOffset() * 60000; // ms i uts time
+      const localOffset = currentTime.getTimezoneOffset() * 60000; // ms  uts time
       const utc = localTime + localOffset;
 
       const offsetStr = timeZonForSelectedCountry;
       const offsetFloat = parseFloat(offsetStr.replace("UTC", ""));
-      let selectedCountryTime = utc + 3600000 * offsetFloat; // 5.0 to sec
+      let selectedCountryTime = utc + 3600000 * offsetFloat; // 5.0 to msec
       console.log(selectedCountryTime);
       console.log(
         `The local time in ${selectedCountry} is ${new Date(

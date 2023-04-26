@@ -1,13 +1,13 @@
 const searchBtn = document.getElementById("search-btn");
-const countryList = document.getElementById("meal");
-const countryDetailsContent = document.querySelector(".meal-details-content");
-const CloseBtn = document.getElementById("recipe-close-btn");
+const countryList = document.getElementById("rest");
+const countryDetailsContent = document.querySelector(".rest-details-content");
+const CloseBtn = document.getElementById("country-close-btn");
 const logoutBtn = document.querySelector("#logout-btn");
 // event listeners
 searchBtn.addEventListener("click", getcountryList);
 countryList.addEventListener("click", getCountryInfo);
 CloseBtn.addEventListener("click", () => {
-  countryDetailsContent.parentElement.classList.remove("showRecipe");
+  countryDetailsContent.parentElement.classList.remove("showcountry");
 });
 
 // get country  list that matches with the value
@@ -21,11 +21,11 @@ function getcountryList() {
       if (data) {
         data.forEach((data) => {
           html += `
-                      <div class = "meal-item" data-id = "${data.name.common}">
-                          <div class = "meal-img">
+                      <div class = "rest-item" data-id = "${data.name.common}">
+                          <div class = "rest-img">
                               <img src = "${data.flags.png}" alt = "food">
                           </div>
-                          <div class = "meal-name">
+                          <div class = "rest-name">
                               <h3>${data.name.common}</h3>
                               <a href = "#" class = "country-btn">Get Details</a>
                           </div>
@@ -34,7 +34,7 @@ function getcountryList() {
         });
         countryList.classList.remove("notFound");
       } else {
-        html = "Sorry, we didn't find any meal!";
+        html = "Sorry, we didn't find any rest!";
         countryList.classList.add("notFound");
       }
 
@@ -59,10 +59,10 @@ function CountryInfoModal(country) {
   console.log(country);
   country = country[0];
   let html = `
-        <h2 class = "recipe-title">${country.name.common}</h2>
-        Area => <p class = "recipe-category">${country.area}</p>
-         Population =>   <p  class = "recipe-category"  Population>${country.population}</p>
-        <div class = "recipe-instruct">
+        <h2 class = "country-title">${country.name.common}</h2>
+        Area => <p class = "country-category">${country.area}</p>
+         Population =>   <p  class = "country-category"  Population>${country.population}</p>
+        <div class = "country-instruct">
             <h3>Flag</h3>
             <img src="${country.flags.png}" />
         </div>
@@ -71,7 +71,7 @@ function CountryInfoModal(country) {
       
     `;
   countryDetailsContent.innerHTML = html;
-  countryDetailsContent.parentElement.classList.add("showRecipe");
+  countryDetailsContent.parentElement.classList.add("showcountry");
 }
 
 logoutBtn.addEventListener("click", function (e) {

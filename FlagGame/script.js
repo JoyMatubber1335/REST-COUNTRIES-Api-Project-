@@ -56,9 +56,9 @@ function showNextFlag() {
   // Set current flag to the countrys flag
   currentFlag = randomCountry.flag;
   flagImg.src = currentFlag;
-  console.log(randomCountry.name);   
-  console.log(flagImg.src);   //https://flagcdn.com/at.svg
-  // in a row not show
+  console.log(randomCountry.name);
+  console.log(flagImg.src); //https://flagcdn.com/at.svg
+  // in a row not show same falg
   countries.splice(randomIndex, 1);
 }
 
